@@ -304,6 +304,10 @@ function keyDown(keyCode) {
 
 // 移动端使用touch事件来监听滑块移动
 function touch() {
+  document.body.addEventListener('touchmove', function(e){
+        e.preventDefault();
+    }, { passive: false });
+
   var gameBoard = document.getElementsByClassName("game-board")[0];
   gameBoard.addEventListener(
     "touchstart",
